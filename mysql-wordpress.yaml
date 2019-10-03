@@ -1,26 +1,40 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    run: test-nginx
-  name: test-nginx
+    app: wordpress
+  name: wordpress-mysql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: test-nginx
-  strategy: {}
+      app: wordpress
+      tier: mysql
+  strategy:
+    type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        run: test-nginx
+        app: wordpress
+        tier: mysql
     spec:
       containers:
-      - image: nginx
-        name: test-nginx
+      - image: mysql:5.6
+        name: mysql-container
         ports:
         - containerPort: 80
-        resources: {}
-status: {}
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-pass
+                key: password
+        volumeMounts:
+          - name: mysql-vol
+            mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-vol
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+
+
