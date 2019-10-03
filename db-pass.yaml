@@ -3,5 +3,4 @@ kind: Secret
 metadata:
   name: db-pass
 data:
-  type: Opaque
   password: bXlwYXNzQDEyMwo=
