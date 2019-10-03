@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: wordpress-app
+  name: wordpress-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: wordpress-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: wordpress-app
+    spec:
+      containers:
+      - image: wordpress
+        name: wordpress-app
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
