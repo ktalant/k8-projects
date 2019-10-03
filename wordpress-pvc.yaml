@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistenVolumeClaim
+metadata:
+  name: wordpress-pvc
+  labels:
+    vol: wordpress-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
