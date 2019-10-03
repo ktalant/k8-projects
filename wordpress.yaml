@@ -1,26 +1,40 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    run: wordpress-app
+    app: wordpress
   name: wordpress-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: wordpress-app
-  strategy: {}
+      app: wordpress
+      tier: frontend
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        run: wordpress-app
+        app: wordpress
+        tier: frontend
     spec:
       containers:
-      - image: wordpress
-        name: wordpress-app
+      - image: wordpress:4.8-apache
+        name: wordpress-container
         ports:
         - containerPort: 80
-        resources: {}
-status: {}
+        env:
+          - name: WORDPRESS_DB_HOST
+            value: mysql-service
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-pass
+                key: password
+        volumeMounts:
+          - name: wordpress-vol
+            mountPath: /var/www/html
+      volumes:
+        - name: wordpress-vol
+          persistentVolumeClaim:
+            claimName: wordpress-pvc
+
+
