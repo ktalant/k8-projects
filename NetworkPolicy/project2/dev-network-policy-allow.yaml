@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  namespace: dev
+  name: dev-allow
+  labels:
+    pol: dev-allow
+spec:
+  podSelector:
+    matchLabels:
+      env: dev
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              env: dev
