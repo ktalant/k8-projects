@@ -8,11 +8,11 @@ spec:
   podSelector:
     matchLabels:
       tier: frontend
-      app: nginx1
+      app: nginx
   ingress:
     - from:
         - podSelector:
             matchLabels:
               tier: frontend
-              app: centos1
+              app: centos
 
