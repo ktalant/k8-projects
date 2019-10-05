@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  namespace: prod
+  namespace: dev
   name: httpd-prod1
   labels:
-    env: prod
+    env: dev
     app: httpd
 spec:
   containers:
