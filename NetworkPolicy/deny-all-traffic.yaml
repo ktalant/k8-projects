@@ -6,4 +6,4 @@ metadata:
     role: deny-all-pod-traffic
 spec:
   podSelector: {}
-  ingress: {}
+  ingress: []
