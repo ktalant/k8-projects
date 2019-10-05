@@ -9,7 +9,7 @@ spec:
   podSelector:
     matchLabels:
       env: dev
-      app: httpd
+
   ingress:
     - from:
         - namespaceSelector:
