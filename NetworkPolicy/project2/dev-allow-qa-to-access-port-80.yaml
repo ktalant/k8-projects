@@ -17,7 +17,7 @@ spec:
             matchLabels:
               env: qa
         - podSelector:
-            matchlabels:
+            matchLabels:
               env: qa
               app: centos
 
