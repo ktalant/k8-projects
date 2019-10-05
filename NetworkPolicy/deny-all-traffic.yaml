@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-pod-traffic
+  labels:
+    role: deny-all-pod-traffic
+spec:
+  podSelector: {}
+  ingress:
+    - from: {}
