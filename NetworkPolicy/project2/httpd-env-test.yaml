@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: test
+  name: httpd-test1
+  label:
+    env: test
+    app: httpd
+spec:
+  cotainers:
+    - image: httpd
+      name: httpd-container
+      ports:
+        - containerPort: 80

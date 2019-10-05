@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: qa
+  name: httpd-qa1
+  label:
+    env: qa
+    app: httpd
+spec:
+  cotainers:
+    - image: httpd
+      name: httpd-container
+      ports:
+        - containerPort: 80

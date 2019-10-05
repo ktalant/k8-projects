@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: prod
+  name: centos-prod1
+  label:
+    env: prod
+    app: centos
+spec:
+  cotainers:
+    - image: centos
+      name: centos-container
+      tty: true
+      stdin: true

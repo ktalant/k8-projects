@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: qa
+  name: centos-qa1
+  label:
+    env: qa
+    app: centos
+spec:
+  cotainers:
+    - image: centos
+      name: centos-container
+      tty: true
+      stdin: true
