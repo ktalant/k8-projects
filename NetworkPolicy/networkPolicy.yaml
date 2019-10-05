@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: netpol-frontend
+  labels:
+    pol: netpol-frontend
+spec:
+  podSelector:
+    matchLabels:
+      frontend: nginx1
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              frontend: centos1
+
