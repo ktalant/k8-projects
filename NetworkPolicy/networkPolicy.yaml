@@ -7,10 +7,12 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      frontend: nginx1
+      tier: frontend
+      app: nginx1
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              frontend: centos1
+              tier: frontend
+              app: centos1
 
