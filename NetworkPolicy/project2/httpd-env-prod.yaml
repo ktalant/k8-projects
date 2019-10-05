@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: prod
   name: httpd-prod1
-  label:
+  labels:
     env: prod
     app: httpd
 spec:

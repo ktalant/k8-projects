@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: test
   name: httpd-test1
-  label:
+  labels:
     env: test
     app: httpd
 spec:

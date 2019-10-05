@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: qa
   name: centos-qa1
-  label:
+  labels:
     env: qa
     app: centos
 spec:

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: qa
   name: httpd-qa1
-  label:
+  labels:
     env: qa
     app: httpd
 spec:

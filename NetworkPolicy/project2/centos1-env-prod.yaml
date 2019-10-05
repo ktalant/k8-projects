@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: prod
   name: centos-prod1
-  label:
+  labels:
     env: prod
     app: centos
 spec:

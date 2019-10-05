@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   namespace: dev
   name: centos-dev1
-  label:
+  labels:
     env: dev
     app: centos
 spec:
