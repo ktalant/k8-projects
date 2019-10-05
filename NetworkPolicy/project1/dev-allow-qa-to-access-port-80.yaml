@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  namespace: dev
+  name: allow-qa-to-access-dev-port-80
+  labels:
+    pol: allow-qa-to-access-dev-port-80
+spec:
+  podSelector:
+    matchLabels:
+      env: dev
+      app: httpd
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              env: qa
+              app: centos
+      ports:
+        - protocol: TCP
+          port: 80
