@@ -9,13 +9,18 @@ spec:
   podSelector:
     matchLabels:
       env: dev
+      app: httpd
 
   ingress:
     - from:
         - namespaceSelector:
             matchLabels:
               env: qa
+        - podSelector:
+            matchlabels:
+              env: qa
               app: centos
+
       ports:
         - protocol: TCP
           port: 80
