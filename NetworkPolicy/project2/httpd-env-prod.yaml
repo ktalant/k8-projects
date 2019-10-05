@@ -7,7 +7,7 @@ metadata:
     env: prod
     app: httpd
 spec:
-  cotainers:
+  containers:
     - image: httpd
       name: httpd-container
       ports:
