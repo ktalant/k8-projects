@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  namespace: test
+  namespace: dev
   name: httpd-test1
   labels:
-    env: test
+    env: dev
     app: httpd
 spec:
   containers:
