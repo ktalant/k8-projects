@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-test
+  labels:
+    app: centos
+    env: test
+spec:
+  containers:
+    - image: centos
+      name: centos-container
+      tty: true
+      stdin: true
+
