@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: centos-pod-read-only-fs
+  labels:
+    app: centos
+spec:
+  containers:
+    - image: centos
+      name: centos-pod
+      tty: true
+      stdin: true
+      securityContext:
+        readOnlyFileSystem: true
