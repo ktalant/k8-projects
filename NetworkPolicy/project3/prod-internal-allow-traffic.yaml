@@ -1,6 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
+  namespace: prod
   name: prod-internal-allow
   labels:
     npol: prod-internal-allow
