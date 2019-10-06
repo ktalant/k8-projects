@@ -6,8 +6,8 @@ metadata:
     app: ubuntu
 spec:
   securityContext:
-    runAsUser: nobody
-    fsGroup: nobody
+    runAsUser: 65534
+    fsGroup: 65534
   containers:
     - image: ubuntu
       name: ubuntu-container
