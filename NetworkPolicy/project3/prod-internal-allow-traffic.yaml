@@ -11,6 +11,6 @@ spec:
       env: prod
   ingress:
     - from:
-        - PodSelector:
+        - podSelector:
             matchLabels:
               env: prod
