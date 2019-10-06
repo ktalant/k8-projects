@@ -11,4 +11,4 @@ spec:
       tty: true
       stdin: true
       securityContext:
-        readOnlyFileSystem: true
+        readOnlyRootFileSystem: true
