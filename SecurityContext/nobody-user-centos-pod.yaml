@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nobody-user-centos-pod
+  labels:
+    app: centos
+spec:
+  securityContext:
+    runAsUser: 65534
+    fsGroup: 65534
+  containers:
+    - image: centos
+      name: centos-container
+      stdin: true
+      tty: true
