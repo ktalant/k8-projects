@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  namespace: prod
   name: pod-prod
   labels:
     app: centos

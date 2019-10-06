@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkService
 metadata:
-  namespace: prod
-  name: prod-deny-all
+  namespace: test
+  name: test-deny-all
   labels:
-    npol: prod-deny-all
+    npol: test-deny-all
 spec:
   podSelector: {}
   ingress: []
