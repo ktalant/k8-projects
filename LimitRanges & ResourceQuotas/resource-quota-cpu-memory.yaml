@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  namespace: dev
+  name: dev-cpu-mem-quota
+spec:
+  hard:
+    limits.memory: 1Gi
+    limits.cpu: 500m
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  namespace: prod
+  name: prod-cpu-mem-quota
+spec:
+  hard:
+    limits.memory: 1Gi
+    limits.cpu: 400m
+
