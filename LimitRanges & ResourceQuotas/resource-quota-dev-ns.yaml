@@ -28,8 +28,9 @@ spec:
       team: qa
   template:
     metadata:
-      app: nginx
-      team: qa
+      labels:
+        app: nginx
+        team: qa
     spec:
       containers:
        - image: nginx
