@@ -20,10 +20,4 @@ spec:
         cpu: 150m
       type: Container
 
-    - max:
-        cpu: 400m
-        memory: 700Mi
-      min:
-        cpu: 300m
-        memory: 500Mi
-      type: Pod
+
