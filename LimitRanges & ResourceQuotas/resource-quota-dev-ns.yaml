@@ -26,11 +26,11 @@ spec:
     matchLabels:
       app: nginx
       team: qa
-    template:
-      metadata:
-        app: nginx
-        team: qa
-      spec:
-        containers:
-          - image: nginx
-            name: nginx
+  template:
+    metadata:
+      app: nginx
+      team: qa
+    spec:
+      containers:
+       - image: nginx
+         name: nginx
