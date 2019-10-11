@@ -1,0 +1,13 @@
+kops create cluster \
+    --dns-zone team2.talantzon.com \
+    --zones us-east-2a, us-east-2b, us-east2c \
+    --master-size t2.medium \
+    --master-count 3 \
+    --node-size t2.medium \
+    --node-count 6 \
+    --networking weave \
+    --topology private \
+    --bastion \
+    $NAME \
+    --yes
+

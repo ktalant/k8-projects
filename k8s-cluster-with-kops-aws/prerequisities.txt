@@ -1,0 +1,18 @@
+kops create cluster \
+     --node-count 3 \
+     --master-count 3 \
+     --zones us-east-2a, us-east-2b, us-east2c \
+     --master-zone us-east-2a, us-east-2b, us-east-2c \
+     --dns-zone  talant-cluster1.talantzon.com \
+     --node-size t2.medium \
+     --master-size t2.medium \
+     --topology public \
+     --networking weave \
+     --cloud-labels "Team=Prod, Owner=Talant LLC" \
+     $NAME \
+     --dry-run
+
+
+
+
+

@@ -9,6 +9,20 @@ metadata:
   name: prod
 ---
 apiVersion: v1
+kind: LimitRange
+metadata:
+  namespace: dev
+  name: dev-limit-range
+spec:
+  limits:
+    - default:
+        cpu: 50m
+        memory: 100Mi
+      defaultRequest:
+        cpu:
+
+---
+apiVersion: v1
 kind: ResourceQuota
 metadata:
   namespace: dev
